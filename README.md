@@ -2,7 +2,7 @@
 
 [logo-contrast-switch]: src/logo.svg
 
-#ContrastSwitch.js
+# ContrastSwitch.js
 ![GitHub licenze](https://img.shields.io/github/license/Buddenbrock/contrast-switch.js?style=for-the-badge)
 ![GitHub release](https://img.shields.io/github/package-json/version/Buddenbrock/contrast-switch.js?style=for-the-badge)
 ![Last commit](https://img.shields.io/github/last-commit/buddenbrock/contrast-switch.js?style=for-the-badge)
@@ -10,26 +10,26 @@
 
 Javascript for adding additional stylesheet for accessibility styles on button click
 
-##Installation
-###Using npm
+## Installation
+### Using npm
 ```sh
 npm -i @buddenbrock/contrast-switch.js --save
 ```
 
-###Using yarn
+### Using yarn
 ```sh
 yarn add @buddenbrock/contrast-switch.js
 ```
 
-##How to use
+## How to use
 Take a look at the small example in the demo folder
 
-###Add the script bundle to your footer script block
+### Add the script bundle to your footer script block
 ```html
 <script src="./src/contrast-switch.js"></script>
 ```
 
-###Add options
+### Add options
 ```javascript
 let contrastButton = document.querySelector('.btn.contrast');
 let contrastSwitch = new ContrastSwitch(contrastButton, {
