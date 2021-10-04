@@ -1,0 +1,3 @@
+.contrast::after {
+    content: attr(aria-label);
+}
