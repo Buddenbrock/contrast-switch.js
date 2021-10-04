@@ -1,3 +1,7 @@
+![layout][logo-contrast-switch]
+
+[logo-contrast-switch]: src/logo.svg
+
 #ContrastSwitch.js
 ![GitHub licenze](https://img.shields.io/github/license/Buddenbrock/contrast-switch.js?style=for-the-badge)
 ![GitHub release](https://img.shields.io/github/package-json/version/Buddenbrock/contrast-switch.js?style=for-the-badge)
