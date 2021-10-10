@@ -10,7 +10,7 @@
 
 Javascript for adding additional stylesheet for accessibility styles on button click
 
-## INSTALLATION
+## Installation
 ### Using npm
 ```sh
 npm -i @buddenbrock/contrast-switch.js --save
@@ -21,7 +21,7 @@ npm -i @buddenbrock/contrast-switch.js --save
 yarn add @buddenbrock/contrast-switch.js
 ```
 
-## HOW TO USE
+## How to use
 Take a look at the small example in the demo folder
 
 ### Add the script bundle to your footer script block
@@ -48,8 +48,8 @@ let contrastSwitch = new ContrastSwitch(contrastButton, {
 });
 ```
 
-## DONATION
+## Donation
 This is free, open-source software. If you'd like to support the development of future projects, or say thanks for this one, you can [donate](https://www.paypal.me/buddenbrock).
 
-## LICENSE
+## License
 GPL-3.0 &copy; [@buddenbrock/contrast-switch.js](https://github.com/Buddenbrock/contrast-switch.js/blob/master/LICENSE)
