@@ -30,21 +30,26 @@ Take a look at the small example in the demo folder
 ```
 
 ### Add options
+Define your options. These given options are defaults.
+
 ```javascript
 let contrastButton = document.querySelector('.btn.contrast');
 let contrastSwitch = new ContrastSwitch(contrastButton, {
     toggleClass: 'increased',
-    activeTitle: 'Kontraste der Seite zurücksetzen',
-    activeText: 'Kontraste zurücksetzen',
-    inactiveTitle: 'Kontraste der Seite erhöhen',
-    inactiveText: 'Kontraste erhöhen',
+    activeTitle: 'Reset the contrasts of the page',
+    activeText: 'Reset contrasts',
+    inactiveTitle: 'Increase the contrast of the page',
+    inactiveText: 'Increase contrasts',
     cookieName: 'contrast-cookie',
-    accessibilityFileProd: './Public/accessibility.min.css',
-    accessibilityFileLocal: './accessibility.css',
-    activeButtonAlertText: 'Der Kontrast der Seite wurde für Sie erhöht. Nutzen Sie Cookies, um die Einstellung für das komplette Erlebnis zu speichern.',
-    inactiveButtonAlertText: 'Der Kontrast der Seite ist wieder auf dem normalen Level',
+    accessibilityFileProd: './Public/Css/accessibility.min.css',
+    accessibilityFileLocal: './Css/accessibility.css',
+    activeButtonAlertText: 'The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience.',
+    inactiveButtonAlertText: 'The contrast of the page is back to normal.',
 });
 ```
 
-## LICENSE
+## Donation
+This is free, open-source software. If you'd like to support the development of future projects, or say thanks for this one, you can [donate](https://www.paypal.me/buddenbrock).
+
+## License
 GPL-3.0 &copy; [@buddenbrock/contrast-switch.js](https://github.com/Buddenbrock/contrast-switch.js/blob/master/LICENSE)
