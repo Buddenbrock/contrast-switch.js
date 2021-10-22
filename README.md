@@ -24,9 +24,19 @@ yarn add @buddenbrock/contrast-switch.js
 ## How to use
 Take a look at the small example in the demo folder
 
+### Add the styles bundle to your head block
+```html
+<link href="./src/contrast-switch.css" rel="stylesheet" />
+```
+
 ### Add the script bundle to your footer script block
 ```html
 <script src="./src/contrast-switch.js"></script>
+```
+
+### Add button to your DOM
+```html
+<button role="button" class="btn contrast"></button>
 ```
 
 ### Add options
