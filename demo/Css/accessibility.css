@@ -1,0 +1,22 @@
+header .meta,
+header .nav,
+footer .nav,
+.modal button {
+    background-color: #dcdcdd;
+}
+
+.modal h2::before,
+.modal a {
+    filter: brightness(0.5);
+}
+
+.hero h1 {
+    background-color: #fff;
+}
+
+.form input,
+.form textarea,
+.control-label::after {
+    border: 1px solid #2b3945;
+    background-color: #fff !important;
+}
