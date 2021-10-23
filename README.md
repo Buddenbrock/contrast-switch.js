@@ -26,24 +26,24 @@ Take a look at the small example in the demo folder
 
 ### Add the styles bundle to your head block
 ```html
-<link href="./src/contrast-switch.css" rel="stylesheet" />
+<link href="./src/contrast-switch.min.css" rel="stylesheet" />
 ```
 
 ### Add the script bundle to your footer script block
 ```html
-<script src="./src/contrast-switch.js"></script>
+<script src="./src/contrast-switch.min.js"></script>
 ```
 
 ### Add button to your DOM
 ```html
-<button role="button" class="btn contrast"></button>
+<button role="button" class="btn btn-a11y"></button>
 ```
 
 ### Add options
 Define your options. These given options are defaults.
 
 ```javascript
-let contrastButton = document.querySelector('.btn.contrast');
+let contrastButton = document.querySelector('.btn.btn-a11y');
 let contrastSwitch = new ContrastSwitch(contrastButton, {
     toggleClass: 'increased',
     activeTitle: 'Reset the contrasts of the page',

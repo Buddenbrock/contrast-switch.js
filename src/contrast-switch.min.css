@@ -1,0 +1,1 @@
+.btn-a11y::after{content:attr(aria-label)!important}
