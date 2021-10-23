@@ -3,24 +3,33 @@
   "description": "Javascript for adding css stylesheet on button click",
   "version": "0.1.3",
   "keywords": [
-    "Accessibility",
-    "Contrast",
-    "CSS"
+    "accessibility",
+    "contrast",
+    "css",
+    "a11y"
   ],
+  "homepage": "https://github.com/Buddenbrock/contrast-switch.js",
   "author": "Dirk Buddenbrock <git@dirk-buddenbrock.de>",
   "contributors": [
     {
       "name": "CP/COMPARTNER",
       "url": "https://www.cp-compartner.de"
+    },
+    {
+      "name": "Andra Nagusch",
+      "url": "https://github.com/andrenagusch"
     }
   ],
   "readme": "README.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Buddenbrock/contrast-switch.js.git"
+    "url": "git+https://github.com/Buddenbrock/contrast-switch.js.git"
   },
   "bugs": {
     "url": "https://github.com/Buddenbrock/contrast-switch.js/issues"
+  },
+  "demo": {
+    "url": "https://npm.dirk-buddenbrock.de/contrast-switch/"
   },
   "license": "GPL-3.0"
 }
