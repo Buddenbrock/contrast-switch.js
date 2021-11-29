@@ -8,7 +8,7 @@ class ContrastSwitch {
             activeText: options.activeText || 'Reset contrasts',
             inactiveTitle: options.inactiveTitle || 'Increase the contrast of the page',
             inactiveText: options.inactiveText || 'Increase contrasts',
-            cookieName: options.cookieName || 'contrast-cookie',
+            localStorageKey: options.localStorageKey || 'contrast-key',
             accessibilityFileProd: options.accessibilityFileProd || './Public/Css/accessibility.min.css',
             accessibilityFileLocal: options.accessibilityFileLocal || './Css/accessibility.css',
             activeButtonAlertText: options.activeButtonAlertText || 'The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience.',
@@ -66,41 +66,20 @@ class ContrastSwitch {
     }
 
     /**
-     * @desc set cookie vei given parameters
+     * @desc save value to local storage
      * @param cname
      * @param cvalue
-     * @param exdays
      */
-    setCookie = (cname, cvalue, exdays) => {
-        let d = new Date();
-        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-        let expires = "expires=" + d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    saveToLocalStorage = (cname, cvalue) => {
+        localStorage.setItem(cname, cvalue);
     }
 
     /**
-     * @desc get cookie by given name
+     * @desc get value from local storage
      * @param cname
-     * @returns {string}
      */
-    getCookie = cname => {
-        let name = cname + "=",
-            decodedCookie = decodeURIComponent(document.cookie),
-            ca = decodedCookie.split(';');
-
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-
-            while (c.charAt(0) === ' ') {
-                c = c.substring(1);
-            }
-
-            if (c.indexOf(name) === 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-
-        return '';
+    getFromLocalStorage = cname => {
+        return localStorage.getItem(cname) || '';
     }
 
     /**
@@ -143,7 +122,7 @@ class ContrastSwitch {
      */
     switchContrastStyling = () => {
         let accessibilityStatus = 0,
-            ariaCookie = this.getCookie(this.options.cookieName),
+            ariaCookie = this.getFromLocalStorage(this.options.localStorageKey),
             link = this.buildAccessibilityLinkElement();
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -155,20 +134,20 @@ class ContrastSwitch {
         });
 
         this.options.button.addEventListener('click', () => {
-            ariaCookie = this.getCookie(this.options.cookieName);
+            ariaCookie = this.getFromLocalStorage(this.options.localStorageKey);
 
             if (accessibilityStatus === 0 && (ariaCookie === '' || ariaCookie === '0')) {
                 accessibilityStatus = 1;
                 this.addElementInsideHead(link);
                 this.showAlert(this.options.activeButtonAlertText);
-                this.setCookie(this.options.cookieName, accessibilityStatus, 7);
+                this.saveToLocalStorage(this.options.localStorageKey, accessibilityStatus);
                 this.activateContrastButton();
 
             } else {
                 accessibilityStatus = 0;
                 this.removeElement('link[href="' + this.options.accessibilityFile + '"]');
                 this.showAlert(this.options.inactiveButtonAlertText);
-                this.setCookie(this.options.cookieName, accessibilityStatus, 7);
+                this.saveToLocalStorage(this.options.localStorageKey, accessibilityStatus);
                 this.inactivateContrastButton();
             }
         })

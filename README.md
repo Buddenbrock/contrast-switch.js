@@ -50,7 +50,7 @@ let contrastSwitch = new ContrastSwitch(contrastButton, {
     activeText: 'Reset contrasts',
     inactiveTitle: 'Increase the contrast of the page',
     inactiveText: 'Increase contrasts',
-    cookieName: 'contrast-cookie',
+    localStorageKey: 'contrast-key',
     accessibilityFileProd: './Public/Css/accessibility.min.css',
     accessibilityFileLocal: './Css/accessibility.css',
     activeButtonAlertText: 'The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience.',
