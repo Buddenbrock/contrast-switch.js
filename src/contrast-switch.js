@@ -16,7 +16,7 @@ class ContrastSwitch {
         }
 
         if(window.location.hostname === 'localhost') {
-            console.log('Change contrast switch to local file path');
+            console.info('Localhost detected. Change contrast switch to local file path');
             this.options.accessibilityFile = this.options.accessibilityFileLocal;
         } else {
             this.options.accessibilityFile = this.options.accessibilityFileProd;
