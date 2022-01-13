@@ -11,7 +11,7 @@
 This javascript includes a solution for adding accessibility styles for official acceccibility guidelines (`WCAG 2.1`, `EN 301 549 V3.1.1` or `BITV 2.0`) on a user interaction button click.
 User select will be saved inside users local storage so if you switch pages, your settings will be honored and the additional stylesheet loaded again.
 
-## Installation by using npm or yarn
+## How to Install
 ### Add package by using npm
 ```sh
 npm -i @buddenbrock/contrast-switch.js --save
@@ -23,22 +23,18 @@ yarn add @buddenbrock/contrast-switch.js
 ```
 
 ### Add the styles bundle to your head block
+#### Using NPM or Yarn
 ```html
 <link href="./src/contrast-switch.min.css" rel="stylesheet" />
 ```
 
-### Add the script bundle to your footer script block
-```html
-<script src="./src/contrast-switch.min.js"></script>
-```
-
-## Installation by using CDN
-### Add the styles bundle to your head block
+#### Using CDN
 ```html
 <link href="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.4/src/contrast-switch.min.css" rel="stylesheet" />
 ```
 
 ### Add the script bundle to your footer script block
+#### Using NPM or Yarn
 ```html
 <link href="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.4/src/contrast-switch.min.css" rel="stylesheet" />
 ```
