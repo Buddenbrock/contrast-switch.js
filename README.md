@@ -42,12 +42,35 @@ yarn add @buddenbrock/contrast-switch.js
 ## How to use
 ### Add a button to your DOM
 ```html
-<button role="button" class="btn btn-a11y"></button>
+<button class="btn btn-a11y"></button>
 ```
 
-### Init class and add options
-Define your options. These given options are defaults.
+### Initialise class
+```javascript
+let contrastButton = document.querySelector('.btn.btn-a11y');
+let contrastSwitch = new ContrastSwitch(contrastButton);
+```
 
+### Add your options
+Defining your options by adding settings array to class init. These options are supported. Not redefined options will be set by default values.
+
+#### Settings
+| Property                  | Description                                                 | Options | Default                                                                                                           |
+| ------------------------- | ----------------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
+| toggleClass               | Class added to button if additional stylessheet is active   | string  | increased                                                                                                         |
+| activeTitle               | button title if additional stylesheet is active             | string  | Reset the contrasts of the page                                                                                   |
+| activeText                | button content text if additional stylsheed is active       | string  | Reset contrasts                                                                                                   |
+| inactiveTitle             | button title if additional stylesheet is inactive           | string  | Increase the contrast of the page                                                                                 |
+| inactiveText              | button content text if additional stylesheet is inactive    | string  | Increase contrasts                                                                                                |
+| localStorageKey           | storage key in which settings will be saved                 | string  | contrast-key                                                                                                      |
+| accessibilityFileProd     | CSS path to accessibility styles for production system      | string  | ./Public/Css/accessibility.min.css                                                                                |
+| accessibilityFileLocal    | CSS path to accessibility styles for local system           | string  | ./Css/accessibility.css                                                                                           |
+| activeButtonAlertText     | text shown in alert window if additional styles activated   | string  | The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience. |
+| inactiveButtonAlertText   | text shown in alert window if additional styles deactivated | string  | The contrast of the page is back to normal.                                                                       |
+| localhostName             | localhost name                                              | string  | localhost                                                                                                         |
+| localhostInfoMessage      | console message if local system is detected                 | string  | Localhost detected. Change contrast switch to local file path                                                     |
+
+### Example
 ```javascript
 let contrastButton = document.querySelector('.btn.btn-a11y');
 let contrastSwitch = new ContrastSwitch(contrastButton, {
@@ -56,13 +79,6 @@ let contrastSwitch = new ContrastSwitch(contrastButton, {
     activeText: 'Reset contrasts',
     inactiveTitle: 'Increase the contrast of the page',
     inactiveText: 'Increase contrasts',
-    localStorageKey: 'contrast-key',
-    accessibilityFileProd: './Public/Css/accessibility.min.css',
-    accessibilityFileLocal: './Css/accessibility.css',
-    activeButtonAlertText: 'The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience.',
-    inactiveButtonAlertText: 'The contrast of the page is back to normal.',
-    localhostName: 'localhost',
-    localhostInfoMessage: 'Localhost detected. Change contrast switch to local file path',
 });
 ```
 
