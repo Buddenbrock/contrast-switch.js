@@ -82,6 +82,11 @@ let contrastSwitch = new ContrastSwitch(contrastButton, {
 });
 ```
 
+## Future feature
+- settings for activate and deactivate window alert
+- script should honored browser settings too
+
+
 ## Donation
 This is free, open-source software. If you'd like to support the development of future projects, or say thanks for this one, you can [donate](https://www.paypal.me/buddenbrock).
 
