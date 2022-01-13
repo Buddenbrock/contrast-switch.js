@@ -1,6 +1,6 @@
 ![layout][logo-contrast-switch]
 
-[logo-contrast-switch]: src/logo.svg
+[logo-contrast-switch]: demo/Images/logo.svg
 
 # ContrastSwitch.js
 ![GitHub licenze](https://img.shields.io/github/license/Buddenbrock/contrast-switch.js?style=for-the-badge)
@@ -10,19 +10,16 @@
 
 Javascript for adding additional stylesheet for accessibility styles on button click
 
-## Installation
-### Using npm
+## Installation by using npm or yarn
+### Add package by using npm
 ```sh
 npm -i @buddenbrock/contrast-switch.js --save
 ```
 
-### Using yarn
+### Add package by using yarn
 ```sh
 yarn add @buddenbrock/contrast-switch.js
 ```
-
-## How to use
-Take a look at the small example in the demo folder
 
 ### Add the styles bundle to your head block
 ```html
@@ -34,12 +31,24 @@ Take a look at the small example in the demo folder
 <script src="./src/contrast-switch.min.js"></script>
 ```
 
-### Add button to your DOM
+## Installation by using CDN
+### Add the styles bundle to your head block
+```html
+<link href="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.4/src/contrast-switch.min.css" rel="stylesheet" />
+```
+
+### Add the script bundle to your footer script block
+```html
+<link href="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.4/src/contrast-switch.min.css" rel="stylesheet" />
+```
+
+## How to use
+### Add a button to your DOM
 ```html
 <button role="button" class="btn btn-a11y"></button>
 ```
 
-### Add options
+### Init class and add options
 Define your options. These given options are defaults.
 
 ```javascript
@@ -50,11 +59,13 @@ let contrastSwitch = new ContrastSwitch(contrastButton, {
     activeText: 'Reset contrasts',
     inactiveTitle: 'Increase the contrast of the page',
     inactiveText: 'Increase contrasts',
-    cookieName: 'contrast-cookie',
+    localStorageKey: 'contrast-key',
     accessibilityFileProd: './Public/Css/accessibility.min.css',
     accessibilityFileLocal: './Css/accessibility.css',
     activeButtonAlertText: 'The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience.',
     inactiveButtonAlertText: 'The contrast of the page is back to normal.',
+    localhostName: 'localhost',
+    localhostInfoMessage: 'Localhost detected. Change contrast switch to local file path',
 });
 ```
 
