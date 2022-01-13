@@ -21,10 +21,7 @@
     }
   ],
   "readme": "README.md",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Buddenbrock/contrast-switch.js.git"
-  },
+  "repository": "https://github.com/Buddenbrock/contrast-switch.js.git",
   "bugs": {
     "url": "https://github.com/Buddenbrock/contrast-switch.js/issues"
   },
