@@ -64,6 +64,7 @@ let contrastSwitch = new ContrastSwitch(contrastButton, {
     accessibilityFileLocal: './Css/accessibility.css',
     activeButtonAlertText: 'The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience.',
     inactiveButtonAlertText: 'The contrast of the page is back to normal.',
+    localhostName: 'localhost',
 });
 ```
 
