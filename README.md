@@ -34,12 +34,12 @@ yarn add @buddenbrock/contrast-switch.js
 ## Installation by using CDN
 ### Add the styles bundle to your head block
 ```html
-<link href="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.5/src/contrast-switch.min.css" rel="stylesheet" />
+<link href="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.4/src/contrast-switch.min.css" rel="stylesheet" />
 ```
 
 ### Add the script bundle to your footer script block
 ```html
-<link href="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.5/src/contrast-switch.min.css" rel="stylesheet" />
+<link href="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.4/src/contrast-switch.min.css" rel="stylesheet" />
 ```
 
 ## How to use
