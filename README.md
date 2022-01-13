@@ -65,6 +65,7 @@ let contrastSwitch = new ContrastSwitch(contrastButton, {
     activeButtonAlertText: 'The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience.',
     inactiveButtonAlertText: 'The contrast of the page is back to normal.',
     localhostName: 'localhost',
+    localhostInfoMessage: 'Localhost detected. Change contrast switch to local file path',
 });
 ```
 

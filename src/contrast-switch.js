@@ -14,10 +14,11 @@ class ContrastSwitch {
             activeButtonAlertText: options.activeButtonAlertText || 'The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience.',
             inactiveButtonAlertText: options.inactiveButtonAlertText || 'The contrast of the page is back to normal.',
             localhostName: options.localhostName || 'localhost',
+            localhostInfoMessage: options.localhostInfoMessage || 'Localhost detected. Change contrast switch to local file path',
         }
 
         if(window.location.hostname === this.options.localhostName) {
-            console.info('Localhost detected. Change contrast switch to local file path');
+            console.info(this.options.localhostInfoMessage);
             this.options.accessibilityFile = this.options.accessibilityFileLocal;
         } else {
             this.options.accessibilityFile = this.options.accessibilityFileProd;
