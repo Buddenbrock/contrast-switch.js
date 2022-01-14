@@ -36,7 +36,12 @@ yarn add @buddenbrock/contrast-switch.js
 ### Add the script bundle to your footer script block
 #### Using NPM or Yarn
 ```html
-<link href="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.4/src/contrast-switch.min.css" rel="stylesheet" />
+<script src="./src/contrast-switch.min.js"></script>
+```
+
+#### Using CDN
+```html
+<script src="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.4/src/contrast-switch.min.js"></script>
 ```
 
 
