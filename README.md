@@ -12,12 +12,13 @@ This javascript includes a solution for adding accessibility styles for official
 User select will be saved inside users local storage so if you switch pages, your settings will be honored and the additional stylesheet loaded again.
 
 ## How to Install
-### Add package by using npm
+### Add package
+#### Using npm
 ```sh
 npm -i @buddenbrock/contrast-switch.js --save
 ```
 
-### Add package by using yarn
+#### Using yarn
 ```sh
 yarn add @buddenbrock/contrast-switch.js
 ```
