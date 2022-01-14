@@ -1,12 +1,16 @@
 {
   "name": "@buddenbrock/contrast-switch.js",
   "description": "Javascript for adding css stylesheet on button click",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "keywords": [
     "accessibility",
     "contrast",
     "css",
-    "a11y"
+    "a11y",
+    "WCAG 2.1",
+    "EN 301 549 V3.1.1",
+    "BITV 2.0",
+    "styles switch"
   ],
   "homepage": "https://github.com/Buddenbrock/contrast-switch.js",
   "author": "Dirk Buddenbrock <git@dirk-buddenbrock.de>",
