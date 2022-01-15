@@ -1,0 +1,67 @@
+# Node artifact files
+node_modules/
+dist/
+package-lock.json
+yarn.lock
+
+# git-review
+/.gitreview
+
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on network drives
+.smbdelete*
+.nfs.*
+
+# Backups
+*.bak
+*~
+*.svn
+*.old
+.subl*
+
+# SASS Cache
+.sass-cache
+*.sassc
+
+# DirEnv
+.envrc
+
+# Sublime / ATOM PHP Code Intel
+.phpintel
+
+#
+# ## Directory-based project format:
+.idea/
+.metadata
+bin/
+work/
+tmp/
+
+# Log files
+*.log
+
+# Package files
+*.jar
+
+# Applications
+*.app
+*.exe
+*.war
+
+# Large media files
+*.tiff
+*.sketch
+*.ai
+*.psd
+*.mp4
+*.avi
+*.flv
+*.mov
+*.wmv
