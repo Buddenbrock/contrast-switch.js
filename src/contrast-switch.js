@@ -2,21 +2,34 @@ class ContrastSwitch {
     constructor(contrastButton, options = {}) {
         this.options = {
             head: document.getElementsByTagName('head'),
+
+            // button
             button: contrastButton,
             toggleClass: options.toggleClass || 'increased',
             activeTitle: options.activeTitle || 'Reset the contrasts of the page',
             activeText: options.activeText || 'Reset contrasts',
             inactiveTitle: options.inactiveTitle || 'Increase the contrast of the page',
             inactiveText: options.inactiveText || 'Increase contrasts',
+
+            // save settings
             localStorageKey: options.localStorageKey || 'contrast-key',
+
+            // files
             accessibilityFileProd: options.accessibilityFileProd || './Public/Css/accessibility.min.css',
             accessibilityFileLocal: options.accessibilityFileLocal || './Css/accessibility.css',
+
+            // alert
             activeButtonAlertText: options.activeButtonAlertText || 'The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience.',
             inactiveButtonAlertText: options.inactiveButtonAlertText || 'The contrast of the page is back to normal.',
+            disableWindowAlert: options.disableWindowAlert || false,
+
+            // localhost
             localhostName: options.localhostName || 'localhost',
             localhostInfoMessage: options.localhostInfoMessage || 'Localhost detected. Change contrast switch to local file path',
         }
 
+
+        //  switch loaded styles file if localhost is detected
         if(window.location.hostname === this.options.localhostName) {
             console.info(this.options.localhostInfoMessage);
             this.options.accessibilityFile = this.options.accessibilityFileLocal;
@@ -141,14 +154,22 @@ class ContrastSwitch {
             if (accessibilityStatus === 0 && (ariaCookie === '' || ariaCookie === '0')) {
                 accessibilityStatus = 1;
                 this.addElementInsideHead(link);
-                this.showAlert(this.options.activeButtonAlertText);
+
+                if (!this.options.disableWindowAlert) {
+                    this.showAlert(this.options.activeButtonAlertText);
+                }
+
                 this.saveToLocalStorage(this.options.localStorageKey, accessibilityStatus);
                 this.activateContrastButton();
 
             } else {
                 accessibilityStatus = 0;
                 this.removeElement('link[href="' + this.options.accessibilityFile + '"]');
-                this.showAlert(this.options.inactiveButtonAlertText);
+
+                if (!this.options.disableWindowAlert) {
+                    this.showAlert(this.options.inactiveButtonAlertText);
+                }
+
                 this.saveToLocalStorage(this.options.localStorageKey, accessibilityStatus);
                 this.inactivateContrastButton();
             }
