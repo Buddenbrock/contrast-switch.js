@@ -1,37 +1,96 @@
-## Welcome to GitHub Pages
+## ContrastSwitch.js
+![GitHub licenze](https://img.shields.io/github/license/Buddenbrock/contrast-switch.js?style=for-the-badge)
+![GitHub release](https://img.shields.io/github/package-json/version/Buddenbrock/contrast-switch.js?style=for-the-badge)
+![Last commit](https://img.shields.io/github/last-commit/buddenbrock/contrast-switch.js?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/Buddenbrock/contrast-switch.js?style=for-the-badge)
 
-You can use the [editor on GitHub](https://github.com/Buddenbrock/contrast-switch.js/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This javascript includes a solution for adding accessibility styles for official acceccibility guidelines (`WCAG 2.1`, `EN 301 549 V3.1.1` or `BITV 2.0`) on a user interaction button click.
+User select will be saved inside users local storage so if you switch pages, your settings will be honored and the additional stylesheet loaded again.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+### How to Install
+#### Add package
+#### Using npm
+```sh
+npm -i @buddenbrock/contrast-switch.js --save
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+##### Using yarn
+```sh
+yarn add @buddenbrock/contrast-switch.js
+```
 
-### Jekyll Themes
+#### Add the styles bundle to your head block
+##### Using NPM or Yarn
+```html
+<link href="./src/contrast-switch.min.css" rel="stylesheet" />
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Buddenbrock/contrast-switch.js/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+##### Using CDN
+```html
+<link href="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.5/src/contrast-switch.min.css" rel="stylesheet" />
+```
 
-### Support or Contact
+#### Add the script bundle to your footer script block
+##### Using NPM or Yarn
+```html
+<script src="./src/contrast-switch.min.js"></script>
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+##### Using CDN
+```html
+<script src="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.5/src/contrast-switch.min.js"></script>
+```
+
+
+### How to use
+#### Add a button to your DOM
+```html
+<button class="btn btn-a11y"></button>
+```
+
+#### Initialise class
+```javascript
+let contrastButton = document.querySelector('.btn.btn-a11y');
+let contrastSwitch = new ContrastSwitch(contrastButton);
+```
+
+#### Add your options
+Defining your options by adding settings array to class init. These options are supported. Not redefined options will be set by default values.
+
+##### Settings
+| Property                  | Description                                                 | Options | Default                                                                                                           |
+| ------------------------- | ----------------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
+| toggleClass               | Class added to button if additional stylessheet is active   | string  | increased                                                                                                         |
+| activeTitle               | button title if additional stylesheet is active             | string  | Reset the contrasts of the page                                                                                   |
+| activeText                | button content text if additional stylsheed is active       | string  | Reset contrasts                                                                                                   |
+| inactiveTitle             | button title if additional stylesheet is inactive           | string  | Increase the contrast of the page                                                                                 |
+| inactiveText              | button content text if additional stylesheet is inactive    | string  | Increase contrasts                                                                                                |
+| localStorageKey           | storage key in which settings will be saved                 | string  | contrast-key                                                                                                      |
+| accessibilityFileProd     | CSS path to accessibility styles for production system      | string  | ./Public/Css/accessibility.min.css                                                                                |
+| accessibilityFileLocal    | CSS path to accessibility styles for local system           | string  | ./Css/accessibility.css                                                                                           |
+| activeButtonAlertText     | text shown in alert window if additional styles activated   | string  | The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience. |
+| inactiveButtonAlertText   | text shown in alert window if additional styles deactivated | string  | The contrast of the page is back to normal.                                                                       |
+| localhostName             | localhost name                                              | string  | localhost                                                                                                         |
+| localhostInfoMessage      | console message if local system is detected                 | string  | Localhost detected. Change contrast switch to local file path                                                     |
+
+#### Example
+```javascript
+let contrastButton = document.querySelector('.btn.btn-a11y');
+let contrastSwitch = new ContrastSwitch(contrastButton, {
+    toggleClass: 'increased',
+    activeTitle: 'Reset the contrasts of the page',
+    activeText: 'Reset contrasts',
+    inactiveTitle: 'Increase the contrast of the page',
+    inactiveText: 'Increase contrasts',
+});
+```
+
+### Future feature
+- settings for activate and deactivate window alert
+- script should honored browser settings too
+
+### Donation
+This is free, open-source software. If you'd like to support the development of future projects, or say thanks for this one, you can [donate](https://www.paypal.me/buddenbrock).
+
+### License
+GPL-3.0 &copy; [@buddenbrock/contrast-switch.js](https://github.com/Buddenbrock/contrast-switch.js/blob/master/LICENSE)
