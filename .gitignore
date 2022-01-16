@@ -9,6 +9,7 @@ yarn.lock
 
 #github-pages
 /assets
+/docs/assets/css/*.css
 
 # Folder view configuration files
 .DS_Store
