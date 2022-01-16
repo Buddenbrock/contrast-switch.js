@@ -30,3 +30,9 @@ a {
     color: $primary-color;
   }
 }
+
+table {
+  tr:nth-child(2n) {
+    background-color: #fdfdfd;
+  }
+}
