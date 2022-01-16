@@ -12,8 +12,17 @@
     "BITV 2.0",
     "styles switch"
   ],
-  "homepage": "https://github.com/Buddenbrock/contrast-switch.js",
-  "author": "Dirk Buddenbrock <git@dirk-buddenbrock.de>",
+  "homepage": "https://buddenbrock.github.io/contrast-switch.js/",
+  "bugs": {
+    "url": "https://github.com/Buddenbrock/contrast-switch.js/issues",
+    "email": "git@dirk-buddenbrock.de"
+  },
+  "license": "GPL-3.0",
+  "author": {
+    "name": "Dirk Buddenbrock",
+    "email": "git@dirk-buddenbrock.de",
+    "url": "https://www.dirk-buddenbrock.de"
+  },
   "contributors": [
     {
       "name": "CP/COMPARTNER",
@@ -24,13 +33,14 @@
       "url": "https://github.com/andrenagusch"
     }
   ],
+  "funding": {
+    "type": "PayPal",
+    "url": "https://www.paypal.me/buddenbrock"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Buddenbrock/contrast-switch.js.git"
+  },
   "readme": "README.md",
-  "repository": "https://github.com/Buddenbrock/contrast-switch.js.git",
-  "bugs": {
-    "url": "https://github.com/Buddenbrock/contrast-switch.js/issues"
-  },
-  "demo": {
-    "url": "https://npm.dirk-buddenbrock.de/contrast-switch/"
-  },
-  "license": "GPL-3.0"
+  "demo": "https://npm.dirk-buddenbrock.de/contrast-switch/"
 }
