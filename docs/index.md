@@ -1,4 +1,3 @@
-# @buddenbrock/contrast-switch.js
 ![GitHub licenze](https://img.shields.io/github/license/Buddenbrock/contrast-switch.js?style=for-the-badge)
 ![GitHub release](https://img.shields.io/github/package-json/version/Buddenbrock/contrast-switch.js?style=for-the-badge)
 ![Last commit](https://img.shields.io/github/last-commit/buddenbrock/contrast-switch.js?style=for-the-badge)
@@ -7,57 +6,58 @@
 This JavaScript includes a solution for adding accessibility styles for official acceccibility guidelines (`WCAG 2.1`, `EN 301 549 V3.1.1` or `BITV 2.0`) on a user interaction button click.
 User select will be saved inside users local storage so if you switch pages, your settings will be honored and the additional stylesheet loaded again.
 
-## How to Install
-### Add package
+### How to Install
+#### Add package
 #### Using npm
 ```sh
 npm -i @buddenbrock/contrast-switch.js --save
 ```
 
-#### Using yarn
+##### Using yarn
 ```sh
 yarn add @buddenbrock/contrast-switch.js
 ```
 
-### Add the styles bundle to your head block
-#### Using NPM or Yarn
+#### Add the styles bundle to your head block
+##### Using NPM or Yarn
 ```html
 <link href="./src/contrast-switch.min.css" rel="stylesheet" />
 ```
 
-#### Using CDN
+##### Using CDN
 ```html
 <link href="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.6/src/contrast-switch.min.css" rel="stylesheet" />
 ```
 
-### Add the script bundle to your footer script block
-#### Using NPM or Yarn
+#### Add the script bundle to your footer script block
+##### Using NPM or Yarn
 ```html
 <script src="./src/contrast-switch.min.js"></script>
 ```
 
-#### Using CDN
+##### Using CDN
 ```html
 <script src="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.5/src/contrast-switch.min.js"></script>
 ```
 
 
-## How to use
-### Add a button to your DOM
+### How to use
+#### Add a button to your DOM
 ```html
 <button class="btn btn-a11y"></button>
 ```
 
-### Initialise class
+#### Initialise class
 ```javascript
 let contrastButton = document.querySelector('.btn.btn-a11y');
 let contrastSwitch = new ContrastSwitch(contrastButton);
 ```
 
-### Add your options
+#### Add your options
 Defining your options by adding settings array to class init. These options are supported. Not redefined options will be set by default values.
 
-#### Settings
+##### Settings
+
 | Property                   | Description                                                                                          | Options      | Default                                                                                                            |
 |:---------------------------|:-----------------------------------------------------------------------------------------------------|:-------------|:-------------------------------------------------------------------------------------------------------------------|
 | `toggleClass`              | class added to button if additional stylessheet is active                                            | string       | increased                                                                                                          |
@@ -74,7 +74,7 @@ Defining your options by adding settings array to class init. These options are 
 | `localhostName`            | localhost name                                                                                       | string       | localhost                                                                                                          |
 | `localhostInfoMessage`     | console message if local system is detected                                                          | string       | Localhost detected. Change contrast switch to local file path                                                      |
 
-### Example
+#### Example
 ```javascript
 let contrastButton = document.querySelector('.btn.btn-a11y');
 let contrastSwitch = new ContrastSwitch(contrastButton, {
@@ -86,11 +86,11 @@ let contrastSwitch = new ContrastSwitch(contrastButton, {
 });
 ```
 
-## Future feature
+### Future feature
 - script should honored browser settings too
 
-## Donation
+### Donation
 This is free, open-source software. If you'd like to support the development of future projects, or say thanks for this one, you can [donate](https://www.paypal.me/buddenbrock).
 
-## License
+### License
 GPL-3.0 &copy; [@buddenbrock/contrast-switch.js](https://github.com/Buddenbrock/contrast-switch.js/blob/master/LICENSE)
