@@ -58,54 +58,21 @@ let contrastSwitch = new ContrastSwitch(contrastButton);
 Defining your options by adding settings array to class init. These options are supported. Not redefined options will be set by default values.
 
 ##### Settings
-- `toggleClass`
-    - Class added to button if additional stylessheet is active
-    - **Options:** string
-    - **Default:** increased
-- `activeTitle`
-    - Button title if additional stylesheet is active
-    - **Options:** string
-    - **Default:** Reset the contrasts of the page
-- `activeText`
-    - Button content text if additional stylsheed is active
-    - **Options:** string
-    - **Default:** Reset contrasts
-- `inactiveTitle`
-    - Button title if additional stylesheet is inactive
-    - **Options:** string
-    - **Default:** Increase the contrast of the page
-- `inactiveText`
-    - Button content text if additional stylesheet is inactive
-    - **Options:** string
-    - **Default:** Increase contrasts
-- `localStorageKey`
-    - Storage key in which settings will be saved
-    - **Options:** string
-    - **Default:** contrast-key
-- `accessibilityFileProd`
-    - CSS path to accessibility styles for production system
-    - **Options:** string
-    - **Default:** ./Public/Css/accessibility.min.css
-- `accessibilityFileLocal`
-    - CSS path to accessibility styles for local system
-    - **Options:** string
-    - **Default:** ./Css/accessibility.css
-- `activeButtonAlertText`
-    - Text shown in alert window if additional styles activated
-    - **Options:** string
-    - **Default:** The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience.
-- `inactiveButtonAlertText`
-    - Text shown in alert window if additional styles deactivated
-    - **Options:** string
-    - **Default:** The contrast of the page is back to normal.
-- `localhostName`
-    - Localhost name
-    - **Options:** string
-    - **Default:** localhost
-- `localhostInfoMessage`
-    - Console message if local system is detected
-    - **Options:** string
-    - **Default:** Localhost detected. Change contrast switch to local file path
+
+| Property                   | Description                                                                                          | Options      | Default                                                                                                            |
+|:---------------------------|:-----------------------------------------------------------------------------------------------------|:-------------|:-------------------------------------------------------------------------------------------------------------------|
+| `toggleClass`              | Class added to button if additional stylessheet is active                                            | string       | increased                                                                                                          |
+| `activeTitle`              | button title if additional stylesheet is active                                                      | string       | Reset the contrasts of the page                                                                                    |
+| `activeText`               | button content text if additional stylsheed is active                                                | string       | Reset contrasts                                                                                                    |
+| `inactiveTitle`            | button title if additional stylesheet is inactive                                                    | string       | Increase the contrast of the page                                                                                  |
+| `inactiveText`             | button content text if additional stylesheet is inactive                                             | string       | Increase contrasts                                                                                                 |
+| `localStorageKey`          | storage key in which settings will be saved                                                          | string       | contrast-key                                                                                                       |
+| `accessibilityFileProd`    | CSS path to accessibility styles for production system                                               | string       | ./Public/Css/accessibility.min.css                                                                                 |
+| `accessibilityFileLocal`   | CSS path to accessibility styles for local system                                                    | string       | ./Css/accessibility.css                                                                                            |
+| `activeButtonAlertText`    | text shown in alert window if additional styles activated                                            | string       | The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience.  |
+| `inactiveButtonAlertText`  | text shown in alert window if additional styles deactivated                                          | string       | The contrast of the page is back to normal.                                                                        |
+| `localhostName`            | localhost name                                                                                       | string       | localhost                                                                                                          |
+| `localhostInfoMessage`     | console message if local system is detected                                                          | string       | Localhost detected. Change contrast switch to local file path                                                      |
 
 #### Example
 ```javascript
