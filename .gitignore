@@ -7,6 +7,11 @@ yarn.lock
 # git-review
 /.gitreview
 
+#regular files
+/src
+/demo
+/assets/css/*.css
+
 # Folder view configuration files
 .DS_Store
 Desktop.ini
