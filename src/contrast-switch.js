@@ -176,3 +176,5 @@ class ContrastSwitch {
         })
     }
 }
+
+export default ContrastSwitch;
