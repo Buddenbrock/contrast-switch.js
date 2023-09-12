@@ -41,6 +41,5 @@
     "type": "git",
     "url": "git+https://github.com/Buddenbrock/contrast-switch.js.git"
   },
-  "readme": "README.md",
-  "demo": "https://npm.dirk-buddenbrock.de/contrast-switch/"
+  "readme": "README.md"
 }
