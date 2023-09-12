@@ -1,104 +1,103 @@
 class ContrastSwitch {
     constructor(contrastButton, options = {}) {
-        this.options = {
-            head: document.getElementsByTagName('head'),
-
-            // button
-            button: contrastButton,
-            toggleClass: options.toggleClass || 'increased',
-            activeTitle: options.activeTitle || 'Reset the contrasts of the page',
-            activeText: options.activeText || 'Reset contrasts',
-            inactiveTitle: options.inactiveTitle || 'Increase the contrast of the page',
-            inactiveText: options.inactiveText || 'Increase contrasts',
+        const {
+            toggleClass = 'increased',
+            activeTitle = 'Reset the contrasts of the page',
+            activeText = 'Reset contrasts',
+            inactiveTitle = 'Increase the contrast of the page',
+            inactiveText = 'Increase contrasts',
 
             // save settings
-            localStorageKey: options.localStorageKey || 'contrast-key',
+            localStorageKey = 'contrast-key',
 
-            // files
-            accessibilityFileProd: options.accessibilityFileProd || './Public/Css/accessibility.min.css',
-            accessibilityFileLocal: options.accessibilityFileLocal || './Css/accessibility.css',
+            // file
+            accessibilityFile = './Css/accessibility.css',
 
             // alert
-            activeButtonAlertText: options.activeButtonAlertText || 'The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience.',
-            inactiveButtonAlertText: options.inactiveButtonAlertText || 'The contrast of the page is back to normal.',
-            disableWindowAlert: options.disableWindowAlert || false,
+            activeButtonAlertText = 'The contrast of the page has been increased for you. Use cookies to save the setting for the complete experience.',
+            inactiveButtonAlertText = 'The contrast of the page is back to normal.',
+            disableWindowAlert = false,
+        } = options;
 
-            // localhost
-            localhostName: options.localhostName || 'localhost',
-            localhostInfoMessage: options.localhostInfoMessage || 'Localhost detected. Change contrast switch to local file path',
-        }
+        this.options = {
+            head: document.getElementsByTagName('head'),
+            button: contrastButton,
 
+            toggleClass,
+            activeTitle,
+            activeText,
+            inactiveTitle,
+            inactiveText,
+            localStorageKey,
+            accessibilityFile,
+            activeButtonAlertText,
+            inactiveButtonAlertText,
+            disableWindowAlert,
+        };
 
-        //  switch loaded styles file if localhost is detected
-        if(window.location.hostname === this.options.localhostName) {
-            console.info(this.options.localhostInfoMessage);
-            this.options.accessibilityFile = this.options.accessibilityFileLocal;
-        } else {
-            this.options.accessibilityFile = this.options.accessibilityFileProd;
-        }
+        this.accessibilityStatus = parseInt(this.getFromLocalStorage(this.options.localStorageKey)) || 0;
+        this.link = this.buildAccessibilityLinkElement();
 
-        this.initContrastSwitch();
+        this.updateButtonAttributes(this.options.inactiveText, this.options.inactiveTitle);
         this.switchButtonStyling();
         this.switchContrastStyling();
     }
 
-    initContrastSwitch = () => {
-        this.options.button.setAttribute('aria-label', this.options.inactiveText);
-        this.options.button.setAttribute('title', this.options.inactiveTitle);
+    /**
+     * @desc    update attributes on contrast button
+     * @param   text
+     * @param   title
+     */
+    updateButtonAttributes(text, title) {
+        this.options.button.setAttribute('aria-label', text);
+        this.options.button.setAttribute('title', title);
     }
 
     /**
-     * @desc toggling class and content by clicking contrast button
+     * @desc    toggling class and content by clicking contrast button
      */
     switchButtonStyling = () => {
         this.options.button.addEventListener('click', () => {
-            let containsToggleClass = this.options.button.classList.contains(this.options.toggleClass);
-
-            if(containsToggleClass) {
-                this.inactivateContrastButton();
+            if(this.accessibilityStatus === 0) {
+                this.toggleContrast(true);
             } else {
-                this.activateContrastButton();
+                this.toggleContrast(false);
             }
         })
     }
 
     /**
-     * @desc set contrast button status to active
+     * @desc    toggle mode of contrast button
      */
-    activateContrastButton = () => {
-        this.options.button.classList.add(this.options.toggleClass);
-        this.options.button.setAttribute('aria-label', this.options.activeText);
-        this.options.button.setAttribute('title', this.options.activeTitle);
+    toggleContrast(activate) {
+        this.accessibilityStatus = activate ? 1 : 0;
+
+        const text = activate ? this.options.activeText : this.options.inactiveText;
+        const title = activate ? this.options.activeTitle : this.options.inactiveTitle;
+
+        this.updateButtonAttributes(text, title);
+        this.options.button.classList.toggle(this.options.toggleClass, activate);
     }
 
     /**
-     * @desc set contrast button status to inactive
+     * @desc    save value to local storage
+     * @param   name
+     * @param   value
      */
-    inactivateContrastButton = () => {
-        this.options.button.classList.remove(this.options.toggleClass);
-        this.options.button.setAttribute('aria-label', this.options.inactiveText);
-        this.options.button.setAttribute('title', this.options.inactiveTitle);
+    saveToLocalStorage = (name, value) => {
+        localStorage.setItem(name, value);
     }
 
     /**
-     * @desc save value to local storage
-     * @param cname
-     * @param cvalue
+     * @desc    get value from local storage
+     * @param   name
      */
-    saveToLocalStorage = (cname, cvalue) => {
-        localStorage.setItem(cname, cvalue);
+    getFromLocalStorage = name => {
+        return localStorage.getItem(name) || '';
     }
 
     /**
-     * @desc get value from local storage
-     * @param cname
-     */
-    getFromLocalStorage = cname => {
-        return localStorage.getItem(cname) || '';
-    }
-
-    /**
-     * @desc generate css link element
+     * @desc    generate css link element
      * @returns {HTMLLinkElement}
      */
     buildAccessibilityLinkElement = () => {
@@ -110,41 +109,40 @@ class ContrastSwitch {
     }
 
     /**
-     * @desc insert element inside head
-     * @param element
+     * @desc    insert element inside head
+     * @param   element
      */
     addElementInsideHead = element => {
         this.options.head[0].appendChild(element);
     }
 
     /**
-     * @desc remove element
+     * @desc    remove element
      */
     removeElement = element => {
         document.querySelector(element).remove();
     }
 
     /**
-     * @desc show alert with given message
-     * @param message
+     * @desc    show alert with given message
+     * @param   message
      */
     showAlert = message => {
         window.alert(message);
     }
 
     /**
-     * @desc AccessibilitySwitch for adding additional css file
+     * @desc    AccessibilitySwitch for adding additional css file
      */
     switchContrastStyling = () => {
         let accessibilityStatus = 0,
-            ariaCookie = this.getFromLocalStorage(this.options.localStorageKey),
-            link = this.buildAccessibilityLinkElement();
+            ariaCookie = this.getFromLocalStorage(this.options.localStorageKey);
 
         document.addEventListener('DOMContentLoaded', () => {
             if (ariaCookie === '1') {
                 accessibilityStatus = 1;
-                this.addElementInsideHead(link);
-                this.activateContrastButton();
+                this.addElementInsideHead(this.link);
+                this.toggleContrast(true);
             }
         });
 
@@ -153,14 +151,14 @@ class ContrastSwitch {
 
             if (accessibilityStatus === 0 && (ariaCookie === '' || ariaCookie === '0')) {
                 accessibilityStatus = 1;
-                this.addElementInsideHead(link);
+                this.addElementInsideHead(this.link);
 
                 if (!this.options.disableWindowAlert) {
                     this.showAlert(this.options.activeButtonAlertText);
                 }
 
                 this.saveToLocalStorage(this.options.localStorageKey, accessibilityStatus);
-                this.activateContrastButton();
+                this.toggleContrast(true);
 
             } else {
                 accessibilityStatus = 0;
@@ -171,10 +169,8 @@ class ContrastSwitch {
                 }
 
                 this.saveToLocalStorage(this.options.localStorageKey, accessibilityStatus);
-                this.inactivateContrastButton();
+                this.toggleContrast(false);
             }
         })
     }
 }
-
-export default ContrastSwitch;
