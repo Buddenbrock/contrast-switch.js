@@ -1,10 +1,10 @@
 # @buddenbrock/contrast-switch.js
-![GitHub licenze](https://img.shields.io/github/license/Buddenbrock/contrast-switch.js?style=for-the-badge)
+![GitHub license](https://img.shields.io/github/license/Buddenbrock/contrast-switch.js?style=for-the-badge)
 ![GitHub release](https://img.shields.io/github/package-json/version/Buddenbrock/contrast-switch.js?style=for-the-badge)
 ![Last commit](https://img.shields.io/github/last-commit/buddenbrock/contrast-switch.js?style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Buddenbrock/contrast-switch.js?style=for-the-badge)
 
-This JavaScript includes a solution for adding accessibility styles for official acceccibility guidelines (`WCAG 2.1`, `EN 301 549 V3.1.1` or `BITV 2.0`) on a user interaction button click.
+This JavaScript includes a solution for adding accessibility styles for official accessibility guidelines (`WCAG 2.1`, `EN 301 549 V3.1.1` or `BITV 2.0`) on a user interaction button click.
 User select will be saved inside users local storage so if you switch pages, your settings will be honored and the additional stylesheet loaded again.
 
 ## How to Install
@@ -33,12 +33,12 @@ yarn add @buddenbrock/contrast-switch.js
 ### Add the script bundle to your footer script block
 #### Using NPM or Yarn
 ```html
-<script src="./src/contrast-switch.min.js"></script>
+<script src="./src/contrast-switch.min.js" />
 ```
 
 #### Using CDN
 ```html
-<script src="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.5/src/contrast-switch.min.js"></script>
+<script src="https://unpkg.com/@buddenbrock/contrast-switch.js@0.1.6/src/contrast-switch.min.js" />
 ```
 
 
@@ -55,14 +55,14 @@ let contrastSwitch = new ContrastSwitch(contrastButton);
 ```
 
 ### Add your options
-Defining your options by adding settings array to class init. These options are supported. Not redefined options will be set by default values.
+Defining your options by adding settings object to class init. These following options are supported. Not redefined options will be set by default values.
 
 #### Settings
 | Property                   | Description                                                                                          | Options      | Default                                                                                                            |
 |:---------------------------|:-----------------------------------------------------------------------------------------------------|:-------------|:-------------------------------------------------------------------------------------------------------------------|
-| `toggleClass`              | class added to button if additional stylessheet is active                                            | string       | increased                                                                                                          |
+| `toggleClass`              | class added to button if additional stylesheet is active                                             | string       | increased                                                                                                          |
 | `activeTitle`              | button title if additional stylesheet is active                                                      | string       | Reset the contrasts of the page                                                                                    |
-| `activeText`               | button content text if additional stylsheed is active                                                | string       | Reset contrasts                                                                                                    |
+| `activeText`               | button content text if additional stylesheet is active                                               | string       | Reset contrasts                                                                                                    |
 | `inactiveTitle`            | button title if additional stylesheet is inactive                                                    | string       | Increase the contrast of the page                                                                                  |
 | `inactiveText`             | button content text if additional stylesheet is inactive                                             | string       | Increase contrasts                                                                                                 |
 | `localStorageKey`          | storage key in which settings will be saved                                                          | string       | contrast-key                                                                                                       |
@@ -87,10 +87,10 @@ let contrastSwitch = new ContrastSwitch(contrastButton, {
 ```
 
 ## Future feature
-- script should honored browser settings too
+- script should honor browser settings too
 
 ## Donation
 This is free, open-source software. If you'd like to support the development of future projects, or say thanks for this one, you can [donate](https://www.paypal.me/buddenbrock).
 
 ## License
-GPL-3.0 &copy; [@buddenbrock/contrast-switch.js](https://github.com/Buddenbrock/contrast-switch.js/blob/master/LICENSE)
+GPL-3.0 &copy; [@Buddenbrook/contrast-switch.js](https://github.com/Buddenbrock/contrast-switch.js/blob/master/LICENSE)
